@@ -18,7 +18,7 @@ test:
 .PHONY:test
 
 build:
-	go build -o dist/roles *.go
+	go build -o dist/roller *.go
 .PHONY:build
 
 vhs: build
