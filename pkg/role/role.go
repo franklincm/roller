@@ -8,11 +8,12 @@ import (
 )
 
 func GetRoleNames(roles []iam.Role) []string {
-	rolesNames := make([]string, 0, len(roles))
+	roleNames := make([]string, 0, len(roles))
 	for _, role := range roles {
-		rolesNames = append(rolesNames, role.Name)
+		roleNames = append(roleNames, role.Name)
 	}
-	return rolesNames
+	sort.Slice(roleNames, func(i, j int) bool { return roleNames[i] < roleNames[j] })
+	return roleNames
 }
 
 func GetUniquePermissions(roles []iam.Role) []string {
