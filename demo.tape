@@ -12,8 +12,15 @@ Set FontSize 14
 Set Width 1000
 Set Height 600
 
-Type "./dist/roller" Sleep 1000ms Enter Sleep 1000ms
+Type "./dist/roller" Sleep 1000ms Enter Sleep 2000ms
 Type "run" Sleep 600ms
 Type ".services" Sleep 500ms
 Type ".update" Sleep 700ms Enter
+Sleep 3000ms
+
+Type "clear" Sleep 2000ms Enter
+Type "./dist/roller -p" Sleep 1000ms Enter Sleep 2000ms
+Type "compute" Sleep 600ms
+Type ".instance" Sleep 500ms
+Type "Admin" Sleep 700ms Enter
 Sleep 3000ms

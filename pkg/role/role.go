@@ -7,6 +7,14 @@ import (
 	"google.golang.org/api/iam/v1"
 )
 
+func GetRoleNames(roles []iam.Role) []string {
+	rolesNames := make([]string, 0, len(roles))
+	for _, role := range roles {
+		rolesNames = append(rolesNames, role.Name)
+	}
+	return rolesNames
+}
+
 func GetUniquePermissions(roles []iam.Role) []string {
 	permissions := make(map[string]bool)
 	for _, r := range roles {
@@ -23,6 +31,15 @@ func GetUniquePermissions(roles []iam.Role) []string {
 	}
 	sort.Slice(uniquePermissions, func(i, j int) bool { return uniquePermissions[i] < uniquePermissions[j] })
 	return uniquePermissions
+}
+
+func PermissionsFromRole(roles []iam.Role, roleName string) []string {
+	for _, role := range roles {
+		if role.Name == roleName {
+			return role.IncludedPermissions
+		}
+	}
+	return []string{}
 }
 
 func RolesFromPermission(roles []iam.Role, permission string) []string {
