@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go install github.com/franklincm/roller
+go install github.com/franklincm/roller@latest
 ```
 
 ## Usage
