@@ -1,5 +1,7 @@
 # roller
 
+<img src="assets/image.jpg">
+
 ## Install
 
 ```sh
