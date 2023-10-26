@@ -31,7 +31,7 @@ func FetchData() ([]iam.Role, error) {
 
 	// confirm data download and save
 	input := confirmation.New(
-		fmt.Sprintf("download data to: %s (~3.5 MB) ?\n", CONFIG_FILE),
+		fmt.Sprintf("\ndownload data to: %s (~3.5 MB) ?\n", CONFIG_FILE),
 		confirmation.Undecided,
 	)
 	ready, err := input.RunPrompt()

@@ -50,5 +50,6 @@ func RolesFromPermission(roles []iam.Role, permission string) []string {
 			matchedRoles = append(matchedRoles, role.Name)
 		}
 	}
+	sort.Slice(matchedRoles, func(i, j int) bool { return matchedRoles[i] < matchedRoles[j] })
 	return matchedRoles
 }
